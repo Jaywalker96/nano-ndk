@@ -5,15 +5,15 @@
 SKIPUNZIP=1
 
 # make sure variables are correct regardless of Magisk or recovery sourcing the script
-if [ -z $OUTFD ]; then
-  OUTFD=/proc/self/fd/$2;
+if [ -z $OUTFD ] then
+  OUTFD=/proc/self/fd/$2
 else
   OUTFD=/proc/self/fd/$OUTFD;
 fi;
-[ -z $TMPDIR ] && TMPDIR=/dev/tmp;
-[ ! -z $ZIP ] && { ZIPFILE="$ZIP"; unset ZIP; }
-[ -z $ZIPFILE ] && ZIPFILE="$3";
-DIR=$(dirname "$ZIPFILE");
+[ -z $TMPDIR ] && TMPDIR=/dev/tmp
+[ ! -z $ZIP ] && { ZIPFILE="$ZIP" unset ZIP; }
+[ -z $ZIPFILE ] && ZIPFILE="$3"
+DIR=$(dirname "$ZIPFILE")
 
 [ "$ANDROID_ROOT" ] || ANDROID_ROOT=/system;
 
